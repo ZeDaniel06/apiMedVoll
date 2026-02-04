@@ -5,11 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Embeddable
-
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Embeddable
 public class Endereco {
     private String logradouro;
     private String bairro;
