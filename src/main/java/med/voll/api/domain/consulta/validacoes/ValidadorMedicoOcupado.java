@@ -13,7 +13,7 @@ public class ValidadorMedicoOcupado implements ValidadorAgendamentoDeConsultas{
     private ConsultaRepository repository;
 
     public void validar(DadosAgendamentoConsulta dados){
-        var medicoOcupado = repository.existsByMedicoIdAndData(dados.idMedico(), dados.data());
+        var medicoOcupado = repository.existsByMedicoIdAndDataAndMotivoCancelamentoIsNull(dados.idMedico(), dados.data());
         if(medicoOcupado){
             throw new ValidacaoException("Médico já possui outra consulta marcada para o mesmo horário!");
         }
